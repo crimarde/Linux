@@ -1,0 +1,5 @@
+Instalar alacarte (Gestor de entradas en el menu de inicio)
+
+sudo apt-get install alacarte.
+
+Para lanzarlo ALT+F2 -> Escribir "alacarte"
