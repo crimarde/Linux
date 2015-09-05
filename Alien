@@ -1,0 +1,7 @@
+Transforma paquets rpm->dev y dev->rpm
+
+#Alien
+# sudo apt-get install alien
+
+#rpm to dev
+# alien linuxconf-devel-1.16r10-2.i386.rpm
