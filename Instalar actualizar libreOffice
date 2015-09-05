@@ -1,0 +1,7 @@
+Si tenemos instalada una versión anterior sólo debemos hacer
+sudo add-apt-repository -y ppa:libreoffice/ppa
+Ahora bastará con actualizar el sistema
+
+En caso de que no tengamos LibreOffice hacemos
+sudo apt-get update
+sudo apt-get install libreoffice
