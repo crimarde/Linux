@@ -1,0 +1,80 @@
+
+    Instalar paquetes:
+
+$ sudo aptitude install <paquetes>
+
+    Desinstalar paquetes:
+
+$ sudo aptitude remove <paquetes>
+
+    Desinstalar paquetes (incluyendo archivos de configuración):
+
+$ sudo aptitude purge <paquetes>
+
+    Actualizar la lista de paquetes disponibles:
+
+$ sudo aptitude update
+
+    Actualizar el sistema con las actualizaciones de paquetes disponibles:
+
+$ sudo aptitude upgrade
+
+    Obtener una lista de opciones del comando:
+
+$ sudo aptitude help
+
+
+Instalar paquetes sin internet
+
+En caso de que se quiera instalar algún programa en un ordenador sin Internet, es necesario descargar los paquetes en cuestión desde un ordenador que sí disponga de una conexión, mediante el siguiente comando:
+
+$ aptitude download <paquete>
+
+De esta manera se descargará el paquete dentro del directorio donde nos encontremos (puede ser en la carpeta del usuario, el escritorio, etc), cabe mencionar que si descargamos el paquete dentro del directorio personal no es necesario ejecutar el comando con permisos de root, ya que tenemos permiso de escritura dentro de dicho directorio.
+
+Una vez descargado el paquete se procede a instalar:
+
+$ sudo dpkg -i nombre_paquete
+
+O bien haciendo doble clic sobre él en la interfaz gráfica.
+
+Hay que tener en cuenta que si hay dependencias, hay que instalar estas primero. Para solucionar y prevenir los posibles problemas de dependencias podemos ir al Synaptic del equipo con internet, buscamos el paquete que queremos, hacemos clic derecho sobre el paquete en cuestión, entramos en Propiedades y seleccionamos la pestaña de Dependencias. Ahí vemos los paquetes que necesitamos para instalar debidamente el paquete en el equipo sin internet.
+
+Opcionalmente también podemos descargar los discos de debian que contienen muchos programas y paquetes .deb lo que los hace compatible con Ubuntu, solo entramos a orígenes del software y damos clic en añadir cd-rom.
+Mediante archivos
+Paquetes Deb
+
+Otra forma de instalar aplicaciones en el sistema es por medio de los paquetes ya preparados para ser instalados y con extensión .deb.
+
+Para instalar estos paquetes sólo tienes que hacer doble click sobre el fichero en el navegador Nautilus y automáticamente se lanzará la aplicación gdebi, que se ocupará de instalar el paquete y buscar las dependencias de otros paquetes que pudiera necesitar para su correcta instalación.
+
+Si lo preferimos, también se pueden instalar mediante la línea de comandos, mediante el comando dpkg:
+
+$ sudo dpkg -i <paquete>.deb
+
+En este caso también habrá que instalar manualmente las posibles dependencias del paquete.
+
+El mismo comando también se puede usar para desinstalar el paquete:
+
+$ sudo dpkg -r <paquete>
+
+Convertir paquetes RPM a Deb
+
+Algunas distribuciones de GNU/Linux, como por ejemplo Red Hat, SUSE y Mandriva, usan paquetes .rpm, organizados de manera diferente a los paquetes .deb de Debian y Ubuntu.
+
+Para instalar estos paquetes es preciso convertirlos antes al formato .deb. Para ello se usa la aplicación alien, la cual se puede instalar mediante uno de los métodos explicados en este artículo. La aplicación alien se utiliza de la siguiente manera:
+
+Abrimos una terminal (Aplicaciones → Accesorios → Terminal) y ejecutamos la siguiente instrucción:
+
+$ sudo alien <paquete>.rpm
+
+De esta forma el programa crea un archivo con el nombre del paquete, pero con extensión .deb, que se podrá instalar siguiendo la explicación Paquetes Deb. 
+
+
+    Damos permisos de ejecución al archivo:
+
+$ sudo chmod +x <nombre_binario>.bin
+
+    Instalamos el archivo binario:
+
+$ sudo ./<nombre_binario>.bin
