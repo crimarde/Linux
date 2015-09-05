@@ -1,0 +1,17 @@
+#Desinstalar java (openjdk)
+
+#desinstalar
+sudo apt-get purge icedtea-* openjdk-* 
+sudo apt-get remove --purge openjdk-* 
+
+#Verificar que ha sido desinstalado
+sudo dpkg --list | grep -i jdk 
+
+
+#Instalar java (oracle)
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update 
+sudo apt-get install oracle-java8-installer 
+
+#Verificar la instalacion de java
+java -version 
